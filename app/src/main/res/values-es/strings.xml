@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mi Aplicación</string>
+    <string name="login">Acceso</string>
+    <string name="hint_email">Introduce tu correo electrónico aquí</string>
+    <string name="sign_in">Iniciar sesión</string>
+</resources>
