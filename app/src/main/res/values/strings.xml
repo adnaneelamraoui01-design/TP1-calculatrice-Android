@@ -4,4 +4,9 @@
     <string name="hint_email">Put your email here</string>
     <string name="sign_in">Sign in</string>
 
+    <string name="item1">Standard</string>
+    <string name="item2">Scientifique</string>
+    <string name="item3">Convertisseur</string>
+    <string name="item4">Devise</string>
+    <string name="item5">Température</string>
 </resources>

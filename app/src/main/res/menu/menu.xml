@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/standard"
+        android:title="@string/item1"/>
+
+    <item
+        android:id="@+id/Scientifique"
+        android:title="@string/item2" />
+
+    <item
+        android:id="@+id/convertisseur"
+        android:title="@string/item3">
+        <menu>
+            <item
+                android:id="@+id/devise"
+                android:title="@string/item4" />
+            <item
+                android:id="@+id/Temperature"
+                android:title="@string/item5" />
+        </menu>
+    </item>
+</menu>

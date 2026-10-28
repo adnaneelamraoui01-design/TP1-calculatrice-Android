@@ -1,12 +1,18 @@
 package com.example.s4;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -21,7 +27,7 @@ public class MainActivity2 extends AppCompatActivity {
     double val1, val2;
     String operateur = "";
 
-    Button   btnPourcentage, btnCE, btnC, btnEffacer, btnInverse, btnXaucarre, btcRacinecarre, btnDivision, btn7, btn8, btn9, btnMultiplication, btn4, btn5, btn6, btnMoins, btn1, btn2, btn3, btnPlus, btnPlusMoins, btn0, btnVirgule, btnEgale;
+    Button   btnPourcentage, btnCE, btnC, btnEffacer, btnInverse, btnXaucarre, btcRacinecarre, btnDivision, btn7, btn8, btn9, btnMultiplication, btn4, btn5, btn6, btnMoins, btn1, btn2, btn3, btnPlus, btn0, btnVirgule, btnEgale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +57,6 @@ public class MainActivity2 extends AppCompatActivity {
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
         btnPlus = findViewById(R.id.btnPlus);
-        btnPlusMoins = findViewById(R.id.btnPlusMoins);
         btn0 = findViewById(R.id.btn0);
         btnVirgule = findViewById(R.id.btnVirgule);
         btnEgale = findViewById(R.id.btnEgale);
@@ -72,7 +77,7 @@ public class MainActivity2 extends AppCompatActivity {
         btn8.setOnClickListener(v -> saisir("8"));
         btn9.setOnClickListener(v -> saisir("9"));
 
-        // ===== virgule =====
+
         btnVirgule.setOnClickListener(v -> {
             String txt = editText.getText().toString();
             if (op) {// après un opérateur ou un résultat
@@ -108,7 +113,7 @@ public class MainActivity2 extends AppCompatActivity {
             attente = false;
         });
 
-        // ===== effacement =====
+
         btnC.setOnClickListener(v -> toutEffacer());
 
         btnCE.setOnClickListener(v -> {
@@ -128,16 +133,8 @@ public class MainActivity2 extends AppCompatActivity {
             editText.setText(t);
         });
 
-        // ===== +/- =====
-        btnPlusMoins.setOnClickListener(v -> {
-            String t = editText.getText().toString();
-            if (t.equals("0")) return;
-            if (t.startsWith("-")) {
-                editText.setText(t.substring(1));
-            } else {
-                editText.setText("-" + t);
-            }
-        });
+
+
 
         // ===== % =====
         btnPourcentage.setOnClickListener(v -> {
@@ -150,7 +147,7 @@ public class MainActivity2 extends AppCompatActivity {
             attente = false;
         });
 
-        // ===== x², √x, 1/x =====
+
         btnXaucarre.setOnClickListener(v -> {
             double valeur = lire();
             afficherUnaire("sqr", valeur, valeur * valeur);
@@ -175,7 +172,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 
-    // ================= méthodes utilitaires =================
+
 
     // Lit le nombre affiché (la virgule devient un point pour Java)
     private double lire() {
@@ -187,14 +184,13 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    // Affiche un nombre proprement : 5.0 -> "5", 2.5 -> "2,5"
     private String formater(double d) {
         if (Double.isNaN(d) || Double.isInfinite(d)) return "0";
         BigDecimal bd = new BigDecimal(d).setScale(10, RoundingMode.HALF_UP).stripTrailingZeros();
         return bd.toPlainString().replace(".", ",");
     }
 
-    // Ajoute un chiffre à l'affichage
+
     private void saisir(String chiffre) {
         String txt = editText.getText().toString();
         if (op || txt.equals("0")) {
@@ -206,7 +202,7 @@ public class MainActivity2 extends AppCompatActivity {
         attente = false;
     }
 
-    // Calcul de base
+
     private double calculer(double a, double b, String o) {
         switch (o) {
             case "+": return a + b;
@@ -217,7 +213,7 @@ public class MainActivity2 extends AppCompatActivity {
         return b;
     }
 
-    // Gère l'appui sur + - x ÷ (avec calcul en chaîne : 2 + 3 + ...)
+
     private void choisirOperateur(String o) {
         if (!operateur.isEmpty() && !attente) {
             double valeur = lire();
@@ -261,5 +257,38 @@ public class MainActivity2 extends AppCompatActivity {
         attente = false;
         editText.setText("0");
         textView.setText("Calculatrice");
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.standard) {
+            Toast.makeText(this, "Standard", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.Scientifique) {
+            Snackbar.make(findViewById(R.id.main), "Scientifique", Snackbar.LENGTH_SHORT)
+                    .setAction("annuler", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Snackbar.make(v, "Annulé", Snackbar.LENGTH_SHORT)
+                                    .setBackgroundTint(Color.GRAY)
+                                    .setTextColor(Color.BLUE)
+                                    .show();
+                        }
+                    })
+                    .setTextColor(Color.GREEN)
+                    .setActionTextColor(Color.RED)
+                    .setBackgroundTint(Color.YELLOW)
+                    .show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
