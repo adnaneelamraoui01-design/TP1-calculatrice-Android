@@ -1,10 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.S4" parent="Theme.Material3.DayNight">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <!-- ===== Thème de l'application ===== -->
+    <style name="Theme.S4" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/calc_primary</item>
+        <item name="colorPrimaryDark">@color/calc_primary_dark</item>
+        <item name="colorSecondary">@color/calc_accent</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/calc_primary_dark</item>
+        <item name="android:windowBackground">@color/calc_fond</item>
+        <item name="windowActionBarOverlay">false</item>
     </style>
 
-    <style name="Theme.S4" parent="Base.Theme.S4" />
+    <!-- ===== Style de base des boutons ===== -->
+    <style name="Calc.Bouton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
 
+    <style name="Calc.Bouton.Chiffre">
+        <item name="backgroundTint">@color/calc_chiffre_fond</item>
+        <item name="android:textColor">@color/calc_chiffre_texte</item>
+    </style>
+
+    <style name="Calc.Bouton.Operateur">
+        <item name="backgroundTint">@color/calc_operateur_fond</item>
+        <item name="android:textColor">@color/calc_operateur_texte</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Calc.Bouton.Egal">
+        <item name="backgroundTint">@color/calc_egal_fond</item>
+        <item name="android:textColor">@color/calc_egal_texte</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Calc.Bouton.Effacer">
+        <item name="backgroundTint">@color/calc_effacer_fond</item>
+        <item name="android:textColor">@color/calc_effacer_texte</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Calc.Bouton.Fonction">
+        <item name="backgroundTint">@color/calc_fonction_fond</item>
+        <item name="android:textColor">@color/calc_fonction_texte</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- ===== Styles de l'affichage ===== -->
+    <style name="Calc.Expression" parent="Widget.AppCompat.TextView">
+        <item name="android:background">@color/calc_champ_fond</item>
+        <item name="android:textColor">@color/calc_texte_expression</item>
+        <item name="android:gravity">end|bottom</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">start</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="Calc.Resultat" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@color/calc_champ_fond</item>
+        <item name="android:textColor">@color/calc_texte_resultat</item>
+        <item name="android:gravity">end|center_vertical</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
 </resources>

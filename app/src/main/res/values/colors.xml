@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <!-- Fond -->
+    <color name="calc_fond">#FAFAFA</color>
+    <color name="calc_ecran_fond">#FFFFFF</color>
+    <color name="calc_champ_fond">#F5F5F5</color>
 
+    <!-- Texte de l'affichage -->
+    <color name="calc_texte_expression">#757575</color>
+    <color name="calc_texte_resultat">#000000</color>
+
+    <!-- Boutons chiffres -->
+    <color name="calc_chiffre_fond">#EEEEEE</color>
+    <color name="calc_chiffre_texte">#000000</color>
+
+    <!-- Boutons opérateurs -->
+    <color name="calc_operateur_fond">#FF9800</color>
+    <color name="calc_operateur_texte">#FFFFFF</color>
+
+    <!-- Bouton égal -->
+    <color name="calc_egal_fond">#1976D2</color>
+    <color name="calc_egal_texte">#FFFFFF</color>
+
+    <!-- Boutons C, CE, ⌫ -->
+    <color name="calc_effacer_fond">#E53935</color>
+    <color name="calc_effacer_texte">#FFFFFF</color>
+
+    <!-- Boutons fonctions (%, ¹/x, x², ²√x) -->
+    <color name="calc_fonction_fond">#BDBDBD</color>
+    <color name="calc_fonction_texte">#000000</color>
+
+    <!-- Couleurs du thème -->
+    <color name="calc_primary">#1976D2</color>
+    <color name="calc_primary_dark">#0D47A1</color>
+    <color name="calc_accent">#FF9800</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

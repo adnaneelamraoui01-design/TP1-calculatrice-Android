@@ -9,25 +9,48 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:padding="8dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="#FFFFFF">
 
         <TextView
             android:id="@+id/tvTextView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
+            android:text="TextView"
             android:textSize="30sp"
-            android:text="TextView" />
+            android:gravity="end|bottom"
+            android:maxLines="2"
+            android:ellipsize="start"
+            android:textColor="#757575"
+            android:background="#F5F5F5"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeMaxTextSize="30sp"
+            android:autoSizeStepGranularity="2sp" />
 
         <EditText
             android:id="@+id/etTxt"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
             android:ems="10"
             android:inputType="text"
-            android:text="0" />
+            android:text="0"
+            android:gravity="end|center_vertical"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:background="#F5F5F5"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
     </LinearLayout>
 
     <LinearLayout
