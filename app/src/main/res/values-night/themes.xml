@@ -1,0 +1,83 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Thème de l'application (celui du manifeste : @style/Theme.S4).
+         DayNight = suit automatiquement le mode clair / sombre du téléphone -->
+    <style name="Theme.S4" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/calc_primary</item>
+        <item name="android:windowBackground">@color/calc_fond</item>
+    </style>
+
+    <!-- ========== Écrans Scientifique / Devise / Température ========== -->
+
+    <style name="RangeeSci">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- Boutons chiffres (style de base) -->
+    <style name="BtnSci">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textColor">@color/calc_chiffre_texte</item>
+        <item name="backgroundTint">@color/calc_chiffre_fond</item>
+    </style>
+
+    <!-- Boutons fonctions (sin, cos, x², %, ...) -->
+    <style name="BtnSci.Fonction">
+        <item name="android:textColor">@color/calc_fonction_texte</item>
+        <item name="backgroundTint">@color/calc_fonction_fond</item>
+    </style>
+
+    <!-- Boutons opérateurs (+, -, ×, ÷) -->
+    <style name="BtnSci.Operateur">
+        <item name="android:textColor">@color/calc_operateur_texte</item>
+        <item name="backgroundTint">@color/calc_operateur_fond</item>
+    </style>
+
+    <!-- Bouton égal -->
+    <style name="BtnSci.Egal">
+        <item name="android:textColor">@color/calc_egal_texte</item>
+        <item name="backgroundTint">@color/calc_egal_fond</item>
+    </style>
+
+    <!-- Boutons AC, ⌫ -->
+    <style name="BtnSci.Effacer">
+        <item name="android:textColor">@color/calc_effacer_texte</item>
+        <item name="backgroundTint">@color/calc_effacer_fond</item>
+    </style>
+
+    <!-- ========== Écrans convertisseurs ========== -->
+
+    <style name="LabelSci">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textColor">@color/calc_texte_expression</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ChampSci">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/calc_texte_resultat</item>
+        <item name="android:textSize">28sp</item>
+        <item name="backgroundTint">@color/calc_operateur_fond</item>
+    </style>
+
+    <style name="SpinnerSci">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:popupBackground">@color/calc_champ_fond</item>
+        <item name="backgroundTint">@color/calc_operateur_fond</item>
+    </style>
+
+</resources>

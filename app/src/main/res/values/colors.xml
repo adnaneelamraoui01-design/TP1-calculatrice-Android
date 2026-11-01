@@ -25,7 +25,7 @@
     <color name="calc_effacer_fond">#E53935</color>
     <color name="calc_effacer_texte">#FFFFFF</color>
 
-    <!-- Boutons fonctions (%, ¹/x, x², ²√x) -->
+    <!-- Boutons fonctions (%, ¹/x, x², ²√x, sin, cos...) -->
     <color name="calc_fonction_fond">#BDBDBD</color>
     <color name="calc_fonction_texte">#000000</color>
 
@@ -35,4 +35,15 @@
     <color name="calc_accent">#FF9800</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+
+    <!-- Alias utilisés par les layouts Scientifique / Devise / Température.
+         Ils suivent automatiquement le mode clair ou sombre -->
+    <color name="sci_fond">@color/calc_fond</color>
+    <color name="sci_texte">@color/calc_texte_resultat</color>
+    <color name="sci_texte_clair">@color/calc_operateur_texte</color>
+    <color name="sci_chiffre">@color/calc_chiffre_fond</color>
+    <color name="sci_fonction">@color/calc_fonction_fond</color>
+    <color name="sci_operateur">@color/calc_operateur_fond</color>
+    <color name="sci_egal">@color/calc_egal_fond</color>
+    <color name="sci_effacer">@color/calc_effacer_fond</color>
 </resources>

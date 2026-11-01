@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fond -->
+    <color name="calc_fond">#121212</color>
+    <color name="calc_ecran_fond">#1C1C1E</color>
+    <color name="calc_champ_fond">#2A2A2D</color>
+
+    <!-- Texte de l'affichage -->
+    <color name="calc_texte_expression">#A0A0A8</color>
+    <color name="calc_texte_resultat">#FFFFFF</color>
+
+    <!-- Boutons chiffres : gris foncé, texte blanc -->
+    <color name="calc_chiffre_fond">#2E3138</color>
+    <color name="calc_chiffre_texte">#FFFFFF</color>
+
+    <!-- Boutons opérateurs : orange vif, texte foncé -->
+    <color name="calc_operateur_fond">#FF9F0A</color>
+    <color name="calc_operateur_texte">#1A1A1A</color>
+
+    <!-- Bouton égal : bleu clair, texte foncé -->
+    <color name="calc_egal_fond">#4DA3FF</color>
+    <color name="calc_egal_texte">#06121F</color>
+
+    <!-- Boutons C, CE, ⌫ : rouge clair, texte foncé -->
+    <color name="calc_effacer_fond">#FF6B6B</color>
+    <color name="calc_effacer_texte">#2A0A0A</color>
+
+    <!-- Boutons fonctions (%, ¹/x, x², ²√x, sin, cos...) : bleu-gris, texte blanc -->
+    <color name="calc_fonction_fond">#3F4A63</color>
+    <color name="calc_fonction_texte">#FFFFFF</color>
+
+    <!-- Couleurs du thème -->
+    <color name="calc_primary">#1E3A5F</color>
+    <color name="calc_primary_dark">#0B1F3A</color>
+    <color name="calc_accent">#FF9F0A</color>
+</resources>

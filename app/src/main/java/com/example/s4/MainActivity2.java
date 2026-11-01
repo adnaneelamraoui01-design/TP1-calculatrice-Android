@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.graphics.Insets;
+import android.content.Intent;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,6 +38,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        setTitle(R.string.item1);
 
         View root = findViewById(R.id.Progect);
         ViewCompat.setOnApplyWindowInsetsListener(root, (v, windowInsets) -> {
@@ -276,29 +279,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.standard) {
-            Toast.makeText(this, "Standard", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (id == R.id.Scientifique) {
-            Snackbar.make(findViewById(R.id.main), "Scientifique", Snackbar.LENGTH_SHORT)
-                    .setAction("annuler", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Snackbar.make(v, "Annulé", Snackbar.LENGTH_SHORT)
-                                    .setBackgroundTint(Color.GRAY)
-                                    .setTextColor(Color.BLUE)
-                                    .show();
-                        }
-                    })
-                    .setTextColor(Color.GREEN)
-                    .setActionTextColor(Color.RED)
-                    .setBackgroundTint(Color.YELLOW)
-                    .show();
-            return true;
-        }
-
+        if (Navigation.gerer(this, item.getItemId())) return true;
         return super.onOptionsItemSelected(item);
     }
 }

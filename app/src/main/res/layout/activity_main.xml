@@ -6,23 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/calc_fond"
+    android:padding="24dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_margin="20dp"
-        android:padding="20dp">
-
-
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login"
+            android:textColor="@color/calc_texte_resultat"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -32,22 +31,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="@string/hint_email"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/calc_texte_resultat"
+            android:textColorHint="@color/calc_texte_expression" />
 
     </LinearLayout>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btnSIgnin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnSIgnin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/sign_in" />
-
-    </LinearLayout>
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/sign_in"
+        android:textColor="@color/calc_operateur_texte"
+        app:backgroundTint="@color/calc_operateur_fond" />
 
 </LinearLayout>
