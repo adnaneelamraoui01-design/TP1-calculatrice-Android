@@ -9,6 +9,8 @@
     <string name="item3">Convertisseur</string>
     <string name="item4">Devise</string>
     <string name="item5">Température</string>
+    <string name="tv1">Calculatrice</string>
+    <string name="tv2">adnane.elamraoui01@gmail.com</string>
     <string-array name="devises">
         <item>MAD - Dirham marocain</item>
         <item>EUR - Euro</item>

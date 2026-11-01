@@ -2,7 +2,6 @@ package com.example.s4;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +11,12 @@ import android.widget.Toast;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.graphics.Insets;
-import android.content.Intent;
 
-
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.math.BigDecimal;
@@ -27,8 +27,13 @@ public class MainActivity2 extends AppCompatActivity {
     String message;
     EditText editText;
 
+    // ===== MENU LATÉRAL =====
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    ActionBarDrawerToggle toggle;
+
     boolean op;          // true : le prochain chiffre remplace l'affichage
-    boolean attente;     // true :  pressé, 2e nombre pas encore saisi
+    boolean attente;     // true : opérateur pressé, 2e nombre pas encore saisi
     double val1, val2;
     String operateur = "";
 
@@ -45,6 +50,25 @@ public class MainActivity2 extends AppCompatActivity {
             Insets bars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
             return windowInsets;
+        });
+
+        // ===== MENU LATÉRAL =====
+        drawerLayout = findViewById(R.id.Progect);
+        navigationView = findViewById(R.id.nav_view);
+
+        // Icône "hamburger" dans l'ActionBar
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.item1, R.string.item1);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        // Clic sur un item du menu latéral
+        navigationView.setNavigationItemSelectedListener(item -> {
+            drawerLayout.closeDrawers();
+            Navigation.gerer(this, item.getItemId());
+            return true;
         });
 
         //  partie instantiation
@@ -79,7 +103,7 @@ public class MainActivity2 extends AppCompatActivity {
         attente = false;
 
         //  chiffres//
-        btn0.setOnClickListener(v->saisir("0"));
+        btn0.setOnClickListener(v -> saisir("0"));
         btn1.setOnClickListener(v -> saisir("1"));
         btn2.setOnClickListener(v -> saisir("2"));
         btn3.setOnClickListener(v -> saisir("3"));
@@ -90,11 +114,10 @@ public class MainActivity2 extends AppCompatActivity {
         btn8.setOnClickListener(v -> saisir("8"));
         btn9.setOnClickListener(v -> saisir("9"));
 
-
         btnVirgule.setOnClickListener(v -> {
             String txt = editText.getText().toString();
-            if (op) {// après un opérateur ou un résultat
-                editText.setText("0,");//on démarre un nouveau nombre "0,"
+            if (op) { // après un opérateur ou un résultat
+                editText.setText("0,"); // on démarre un nouveau nombre "0,"
                 op = false;
                 attente = false;
             } else if (!txt.contains(",")) { // une seule virgule autorisée
@@ -126,7 +149,6 @@ public class MainActivity2 extends AppCompatActivity {
             attente = false;
         });
 
-
         btnC.setOnClickListener(v -> toutEffacer());
 
         btnCE.setOnClickListener(v -> {
@@ -146,9 +168,6 @@ public class MainActivity2 extends AppCompatActivity {
             editText.setText(t);
         });
 
-
-
-
         // ===== % =====
         btnPourcentage.setOnClickListener(v -> {
             double valeur = lire();
@@ -159,7 +178,6 @@ public class MainActivity2 extends AppCompatActivity {
             op = true;
             attente = false;
         });
-
 
         btnXaucarre.setOnClickListener(v -> {
             double valeur = lire();
@@ -185,8 +203,6 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 
-
-
     // Lit le nombre affiché (la virgule devient un point pour Java)
     private double lire() {
         String s = editText.getText().toString().replace(",", ".");
@@ -203,7 +219,6 @@ public class MainActivity2 extends AppCompatActivity {
         return bd.toPlainString().replace(".", ",");
     }
 
-
     private void saisir(String chiffre) {
         String txt = editText.getText().toString();
         if (op || txt.equals("0")) {
@@ -215,7 +230,6 @@ public class MainActivity2 extends AppCompatActivity {
         attente = false;
     }
 
-
     private double calculer(double a, double b, String o) {
         switch (o) {
             case "+": return a + b;
@@ -225,7 +239,6 @@ public class MainActivity2 extends AppCompatActivity {
         }
         return b;
     }
-
 
     private void choisirOperateur(String o) {
         if (!operateur.isEmpty() && !attente) {
@@ -271,15 +284,12 @@ public class MainActivity2 extends AppCompatActivity {
         editText.setText("0");
         textView.setText("Calculatrice");
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
+
+    // onCreateOptionsMenu supprimée : le menu latéral remplace le menu à trois points
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (Navigation.gerer(this, item.getItemId())) return true;
+        if (toggle.onOptionsItemSelected(item)) return true; // clic sur le hamburger
         return super.onOptionsItemSelected(item);
     }
 }
