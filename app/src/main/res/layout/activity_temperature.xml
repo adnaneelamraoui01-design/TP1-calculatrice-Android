@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Progect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sci_fond"
+    android:padding="16dp">
+
+    <TextView style="@style/LabelSci" android:text="Valeur" />
+    <EditText
+        android:id="@+id/etValeur"
+        style="@style/ChampSci"
+        android:inputType="numberDecimal|numberSigned"
+        android:text="0" />
+
+    <TextView style="@style/LabelSci" android:text="De" />
+    <Spinner android:id="@+id/spDe" style="@style/SpinnerSci" />
+
+    <Button
+        android:id="@+id/btnInverser"
+        style="@style/BtnSci.Fonction"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="↕ Inverser" />
+
+    <TextView style="@style/LabelSci" android:text="Vers" />
+    <Spinner android:id="@+id/spVers" style="@style/SpinnerSci" />
+
+    <TextView
+        android:id="@+id/tvResultat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="end"
+        android:textColor="@color/sci_texte"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

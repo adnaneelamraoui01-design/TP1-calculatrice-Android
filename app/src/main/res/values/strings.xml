@@ -9,4 +9,26 @@
     <string name="item3">Convertisseur</string>
     <string name="item4">Devise</string>
     <string name="item5">Température</string>
+    <string-array name="devises">
+        <item>MAD - Dirham marocain</item>
+        <item>EUR - Euro</item>
+        <item>USD - Dollar américain</item>
+        <item>GBP - Livre sterling</item>
+        <item>CAD - Dollar canadien</item>
+        <item>CHF - Franc suisse</item>
+        <item>AED - Dirham des Émirats</item>
+        <item>SAR - Riyal saoudien</item>
+        <item>JPY - Yen japonais</item>
+        <item>CNY - Yuan chinois</item>
+        <item>TRY - Livre turque</item>
+        <item>DZD - Dinar algérien</item>
+        <item>TND - Dinar tunisien</item>
+        <item>EGP - Livre égyptienne</item>
+    </string-array>
+
+    <string-array name="unites_temperature">
+        <item>Celsius (°C)</item>
+        <item>Fahrenheit (°F)</item>
+        <item>Kelvin (K)</item>
+    </string-array>
 </resources>

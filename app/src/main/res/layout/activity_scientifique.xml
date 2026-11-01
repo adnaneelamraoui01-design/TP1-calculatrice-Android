@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Progect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sci_fond"
+    android:padding="4dp">
+
+    <!-- Affichage -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:layout_margin="6dp"
+        android:background="@color/calc_ecran_fond"
+        android:gravity="bottom|end"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvExpression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:maxLines="2"
+            android:textColor="@color/calc_texte_expression"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tvResultat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="0"
+            android:textColor="@color/calc_texte_resultat"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Rangée 1 -->
+    <LinearLayout style="@style/RangeeSci">
+        <Button android:id="@+id/btnDegRad" style="@style/BtnSci.Fonction" android:text="DEG" />
+        <Button android:id="@+id/btnPi" style="@style/BtnSci.Fonction" android:text="π" />
+        <Button android:id="@+id/btnE" style="@style/BtnSci.Fonction" android:text="e" />
+        <Button android:id="@+id/btnC" style="@style/BtnSci.Effacer" android:text="AC" />
+        <Button android:id="@+id/btnEffacer" style="@style/BtnSci.Effacer" android:text="⌫" />
+    </LinearLayout>
+
+    <!-- Rangée 2 -->
+    <LinearLayout style="@style/RangeeSci">
+        <Button android:id="@+id/btnSin" style="@style/BtnSci.Fonction" android:text="sin" />
+        <Button android:id="@+id/btnCos" style="@style/BtnSci.Fonction" android:text="cos" />
+        <Button android:id="@+id/btnTan" style="@style/BtnSci.Fonction" android:text="tan" />
+        <Button android:id="@+id/btnLn" style="@style/BtnSci.Fonction" android:text="ln" />
+        <Button android:id="@+id/btnLog" style="@style/BtnSci.Fonction" android:text="log" />
+    </LinearLayout>
+
+    <!-- Rangée 3 -->
+    <LinearLayout style="@style/RangeeSci">
+        <Button android:id="@+id/btnXaucarre" style="@style/BtnSci.Fonction" android:text="x²" />
+        <Button android:id="@+id/btnPuissance" style="@style/BtnSci.Fonction" android:text="xʸ" />
+        <Button android:id="@+id/btcRacinecarre" style="@style/BtnSci.Fonction" android:text="√" />
+        <Button android:id="@+id/btnParG" style="@style/BtnSci.Fonction" android:text="(" />
+        <Button android:id="@+id/btnParD" style="@style/BtnSci.Fonction" android:text=")" />
+    </LinearLayout>
+
+    <!-- Rangée 4 -->
+    <LinearLayout style="@style/RangeeSci">
+        <Button android:id="@+id/btn7" style="@style/BtnSci" android:text="7" />
+        <Button android:id="@+id/btn8" style="@style/BtnSci" android:text="8" />
+        <Button android:id="@+id/btn9" style="@style/BtnSci" android:text="9" />
+        <Button android:id="@+id/btnDivision" style="@style/BtnSci.Operateur" android:text="÷" />
+        <Button android:id="@+id/btnFact" style="@style/BtnSci.Fonction" android:text="n!" />
+    </LinearLayout>
+
+    <!-- Rangée 5 -->
+    <LinearLayout style="@style/RangeeSci">
+        <Button android:id="@+id/btn4" style="@style/BtnSci" android:text="4" />
+        <Button android:id="@+id/btn5" style="@style/BtnSci" android:text="5" />
+        <Button android:id="@+id/btn6" style="@style/BtnSci" android:text="6" />
+        <Button android:id="@+id/btnMultiplication" style="@style/BtnSci.Operateur" android:text="×" />
+        <Button android:id="@+id/btnInverse" style="@style/BtnSci.Fonction" android:text="1/x" />
+    </LinearLayout>
+
+    <!-- Rangée 6 -->
+    <LinearLayout style="@style/RangeeSci">
+        <Button android:id="@+id/btn1" style="@style/BtnSci" android:text="1" />
+        <Button android:id="@+id/btn2" style="@style/BtnSci" android:text="2" />
+        <Button android:id="@+id/btn3" style="@style/BtnSci" android:text="3" />
+        <Button android:id="@+id/btnMoins" style="@style/BtnSci.Operateur" android:text="-" />
+        <Button android:id="@+id/btnPlus" style="@style/BtnSci.Operateur" android:text="+" />
+    </LinearLayout>
+
+    <!-- Rangée 7 -->
+    <LinearLayout style="@style/RangeeSci">
+        <Button android:id="@+id/btn0" style="@style/BtnSci" android:text="0" />
+        <Button android:id="@+id/btnVirgule" style="@style/BtnSci" android:text="," />
+        <Button android:id="@+id/btnPourcentage" style="@style/BtnSci.Fonction" android:text="%" />
+        <Button android:id="@+id/btnEgale" style="@style/BtnSci.Egal" android:layout_weight="2" android:text="=" />
+    </LinearLayout>
+
+</LinearLayout>
