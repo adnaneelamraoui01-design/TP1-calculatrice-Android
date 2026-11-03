@@ -37,7 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
     double val1, val2;
     String operateur = "";
 
-    Button   btnPourcentage, btnCE, btnC, btnEffacer, btnInverse, btnXaucarre, btcRacinecarre, btnDivision, btn7, btn8, btn9, btnMultiplication, btn4, btn5, btn6, btnMoins, btn1, btn2, btn3, btnPlus, btn0, btnVirgule, btnEgale;
+    Button btnPourcentage, btnCE, btnC, btnEffacer, btnInverse, btnXaucarre, btcRacinecarre, btnDivision, btn7, btn8, btn9, btnMultiplication, btn4, btn5, btn6, btnMoins, btn1, btn2, btn3, btnPlus, btn0, btnVirgule, btnEgale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +64,22 @@ public class MainActivity2 extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        // Clic sur un item du menu latéral
+        // Clic sur un item du menu latéral avec affichage des Toasts
         navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            if (id == R.id.standard) {
+                Toast.makeText(this, "Standard", Toast.LENGTH_SHORT).show();
+            } else if (id == R.id.Scientifique) {
+                Toast.makeText(this, "Scientifique", Toast.LENGTH_SHORT).show();
+            } else if (id == R.id.devise) {
+                Toast.makeText(this, "Convertisseur : Devise", Toast.LENGTH_SHORT).show();
+            } else if (id == R.id.Temperature) {
+                Toast.makeText(this, "Convertisseur : Température", Toast.LENGTH_SHORT).show();
+            }
+
             drawerLayout.closeDrawers();
-            Navigation.gerer(this, item.getItemId());
+            Navigation.gerer(this, id);
             return true;
         });
 
@@ -99,6 +111,10 @@ public class MainActivity2 extends AppCompatActivity {
         btnEgale = findViewById(R.id.btnEgale);
 
         textView.setText("Bienvenue dans MA Calculatrice");
+        String login = getIntent().getStringExtra("login");
+        if (login != null && !login.isEmpty()) {
+            Toast.makeText(this, "Bienvenue " + login, Toast.LENGTH_LONG).show();
+        }
         op = false;
         attente = false;
 
@@ -171,7 +187,7 @@ public class MainActivity2 extends AppCompatActivity {
         // ===== % =====
         btnPourcentage.setOnClickListener(v -> {
             double valeur = lire();
-            double r = operateur.isEmpty() ? 0 : val1 * valeur / 100;
+            double r = operateur.isEmpty() ? 0 : (val1 * valeur) / 100;
             String debut = operateur.isEmpty() ? "" : formater(val1) + " " + operateur + " ";
             textView.setText(debut + formater(r));
             editText.setText(formater(r));
@@ -284,8 +300,6 @@ public class MainActivity2 extends AppCompatActivity {
         editText.setText("0");
         textView.setText("Calculatrice");
     }
-
-    // onCreateOptionsMenu supprimée : le menu latéral remplace le menu à trois points
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

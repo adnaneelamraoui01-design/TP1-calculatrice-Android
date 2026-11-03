@@ -62,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
                     ).show();
 
                 } else {
-                 startActivity(new Intent(MainActivity.this, MainActivity2.class));
+                    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                    intent.putExtra("login", login);   // on envoie le nom saisi
+                    startActivity(intent);
                 }
             }
         });
