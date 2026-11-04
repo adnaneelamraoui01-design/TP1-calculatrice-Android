@@ -275,7 +275,7 @@ public class MainActivity2 extends AppCompatActivity {
         textView.setText(message);
     }
 
-    // Affiche le résultat d'une fonction à un seul nombre (x², √x, 1/x)
+
     private void afficherUnaire(String nom, double valeur, double resultat) {
         String debut = operateur.isEmpty() ? "" : formater(val1) + " " + operateur + " ";
         textView.setText(debut + nom + "(" + formater(valeur) + ")");
@@ -303,7 +303,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)) return true; // clic sur le hamburger
+        if (toggle.onOptionsItemSelected(item)) return true;
         return super.onOptionsItemSelected(item);
     }
 }
